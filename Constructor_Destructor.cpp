@@ -10,14 +10,6 @@ class Student
         double semPerentage;
         string collegeName;
         int collegeCode;
-        void setdata(string fn,int rn,double sp,string cn,int cc)
-        {
-            fullName=fn;
-            rollNum=rn;
-            semPerentage=sp;
-            collegeName=cn;
-            collegeCode=cc;
-        }
         void getdata(Student s1)
         {
             cout<<"Information of the student:"<<endl;
@@ -27,9 +19,14 @@ class Student
             cout<<"CollegeName : "<<s1.collegeName<<endl;
             cout<<"CollegeCode : "<<s1.collegeCode<<endl;
         }
-        Student()
+        Student(string fn,int rn,double sp,string cn,int cc)
         {
             cout<<"Constructor is Created."<<endl;
+            fullName=fn;
+            rollNum=rn;
+            semPerentage=sp;
+            collegeName=cn;
+            collegeCode=cc;
         }
         ~Student(){}
 };
@@ -37,7 +34,6 @@ class Student
 
 int main()
 {
-    Student s1;
     string fn;
     int rn;
     double sp;
@@ -53,6 +49,7 @@ int main()
     cin>>cn;
     cout<<"Enter Your College Code:";
     cin>>cc;
-    s1.setdata(fn,rn,sp,cn,cc);
+    Student s1(fn,rn,sp,cn,cc);
+    
     s1.getdata(s1);
 }
